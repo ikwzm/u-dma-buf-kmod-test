@@ -1,8 +1,21 @@
-# u-dma-buf-kmod-test
+u-dma-buf-kmod-test
+====================================================================================
 
-# Usage
+Overview
+------------------------------------------------------------------------------------
 
-## Compile
+### Introduction
+
+This repository provides kernel module that test udmabuf's in-kernel functions.
+
+Udmabuf is a Linux device driver that allocates contiguous memory blocks in the kernel space as DMA buffers and makes them available from the user space.
+
+For details of udmabuf, please refer to following URL.
+
+https://github.com/ikwzm/udmabuf
+
+Compile
+------------------------------------------------------------------------------------
 
 ### Makefile
 
@@ -36,7 +49,8 @@ shell$ make all
 You need the kernel source code in ```/lib/modules/$(shell uname -r)/build``` to compile.
 
 
-## Run
+Run
+------------------------------------------------------------------------------------
 
 ### Prepare u-dma-buf.ko
 
@@ -98,7 +112,9 @@ shell$ sudo insmod u-dma-buf-kmod-test.ko
 [  649.899286] u-dma-buf-kmod-test: u_dma_buf_device_remove() return=0
 ```
 
+### Remove u-dma-buf-kmod-test.ko
+
 ```console
-shell$ sudo insmod u-dma-buf-kmod-test.ko
+shell$ sudo rmmod u-dma-buf-kmod-test.ko
 ```
 
